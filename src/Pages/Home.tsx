@@ -1,54 +1,98 @@
-import { 
-    Typography,
-    Box,
-    createTheme,
-    ThemeProvider,
-    Container,
-    Grid, 
+import {
+  Typography,
+  Box,
+  createTheme,
+  ThemeProvider,
+  Container,
+  Grid,
+  Button,
 } from "@mui/material";
 import Header from "../Components/Header";
-import image1 from "../Pages/Assets/griffithBeherit.png";
 
 const customTheme = createTheme({
-    palette: {
-      primary: { main: "#393646" },
-      secondary: { main: "#4F4557" },
-      background: { default: "#F4EEE0"},
-      text: { primary: "#6D5D6E"},
+  palette: {
+    primary: { main: "#D6CC99" },
+    secondary: {
+      main: "#445D48",
+      light: "#FDE5D4",
     },
-  });
+  },
+});
 
 const Home = () => {
-
-    return (
-        <ThemeProvider theme={customTheme}>
-            <Container disableGutters sx={{ minWidth: "100%", minHeight: "100vh" }}>
-			<Grid
-				container
-				direction='column'
-				justifyContent='center'
-				alignItems='center'
-			>
-				<Grid item sx={{ width: "100%" }}>
-					<Header />
-                </Grid>
-                <Box
-  component="img"
-  sx={{
-    height: '100px',
-    width: '300px',
-    maxHeight: { xs: '233px', md: '167px' },
-    maxWidth: { xs: '350px', md: '250px' },
-    backgroundImage: 'Assets/griffithBeherit.png'
-}}
-  alt="The house from the offer."
-  src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
-/>
+  return (
+    <ThemeProvider theme={customTheme}>
+      <Container disableGutters sx={{ minWidth: "100%", minHeight: "100vh" }}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item sx={{ width: "100%" }}>
+            <Header />
+          </Grid>
+          <Grid
+            container
+            paddingTop="7vh"
+            direction="column"
+            justifyContent="center"
+            width="50%"
+            height="60%"
+          >
+            <Grid
+              container
+              direction="column"
+              alignItems="left"
+              justifyContent="center"
+              sx={{
+                width: "100%",
+                paddingTop: "50px",
+              }}
+            >
+              <Typography color="primary">Hello, my name is</Typography>
+              <Typography
+                color="secondary"
+                variant="h2"
+                paddingTop="15px"
+                sx={{ fontWeight: "bold" }}
+              >
+                Adam Dupuy.
+              </Typography>
+              <Typography
+                color="secondary.light"
+                variant="h3"
+                paddingTop="15px"
+                sx={{ fontWeight: "bold" }}
+              >
+                I create websites and games.
+              </Typography>
+              <Typography
+                color="secondary.light"
+                paddingTop="20px"
+                width="500px"
+              >
+                I'm a software engineer specializing in Java Springboot backend
+                development and React Typescript development. I want to create
+                things that make the internet a more enjoyable and better place.
+                Currently, I am applying to jobs and learning more about
+                programming in my free time.
+              </Typography>
             </Grid>
-            </Container>
-        </ThemeProvider>
-        
-    );
+            <Grid item sx={{ paddingTop: "5vh", width: "100%" }}>
+              <Button
+                color="primary"
+                variant="outlined"
+                sx={{ width: "210px", padding: "10px" }}
+              >
+                Check out my Github!
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container>
+    </ThemeProvider>
+  );
 };
 
 export default Home;
