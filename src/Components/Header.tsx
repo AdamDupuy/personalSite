@@ -25,6 +25,9 @@ const Header = () => {
     navigate("/");
   };
 
+  const handleClickProjects = async () => {
+    navigate("/projects");
+  };
   return (
     <ThemeProvider theme={customTheme}>
       <Container
@@ -69,7 +72,7 @@ const Header = () => {
                 justifyContent="center"
                 sx={{
                   paddingLeft: "4vh",
-                  paddingTop: "11vh",
+                  paddingTop: "15vh",
                   height: "100px",
                   width: "120px",
                   backgroundImage: myIcon,
@@ -97,7 +100,7 @@ const Header = () => {
                 alignItems: "right",
               }}
             >
-              <Button onClick={() => handleClickHome()}>
+              <Button onClick={() => handleClickProjects()}>
                 <Typography textTransform="none" color="primary" variant="h6">
                   •{" "}
                 </Typography>
