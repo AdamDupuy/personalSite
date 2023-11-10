@@ -20,9 +20,8 @@ const customTheme = createTheme({
 
 const Header = () => {
   const navigate = useNavigate();
-
   const handleClickHome = async () => {
-    navigate("/");
+    navigate("personalSite/");
   };
 
   const handleClickProjects = async () => {
