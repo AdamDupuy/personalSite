@@ -15,10 +15,10 @@ function App() {
         overflow: "hidden",
       }}
     >
-      <BrowserRouter>
+      <BrowserRouter basename="personalSite/">
         <Routes>
-          <Route path="personalSite/" element={<Home />} />
-          <Route path="personalSite/projects" element={<Projects />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </BrowserRouter>
     </Container>
