@@ -99,7 +99,6 @@ const Header = () => {
                   width: { xs: "75px", lg: "120px" },
                   backgroundImage: myIcon,
                   alignItems: "left",
-                  pointerEvents: "none",
                 }}
                 src={myIcon}
               />
