@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import myIcon from "../Assets/icon.png";
+import resumePDF from "../Assets/AdamDupuyJrResume2023.pdf";
 
 const customTheme = createTheme({
   palette: {
@@ -25,9 +26,20 @@ const Header = () => {
     navigate("/");
   };
 
+  const handleClickAboutMe = async () => {
+    navigate("/infoPage", { state: { pageType: "About Me" } });
+    window.location.reload();
+  };
+
+  const handleClickContact = async () => {
+    navigate("/infoPage", { state: { pageType: "Contact" } });
+    window.location.reload();
+  };
+
   const handleClickProjects = async () => {
     navigate("/projects");
   };
+
   return (
     <ThemeProvider theme={customTheme}>
       <Container
@@ -121,7 +133,7 @@ const Header = () => {
                 alignItems: "right",
               }}
             >
-              <Button onClick={() => handleClickHome()}>
+              <Button onClick={() => handleClickAboutMe()}>
                 <Typography textTransform="none" color="primary" variant="h6">
                   •{" "}
                 </Typography>
@@ -142,7 +154,7 @@ const Header = () => {
                 alignItems: "right",
               }}
             >
-              <Button onClick={() => handleClickHome()}>
+              <Button onClick={() => handleClickContact()}>
                 <Typography textTransform="none" color="primary" variant="h6">
                   •{" "}
                 </Typography>
@@ -150,7 +162,7 @@ const Header = () => {
                   &nbsp;
                 </Typography>
                 <Typography textTransform="none" color="secondary" variant="h6">
-                  Contact
+                  Contact Me
                 </Typography>
               </Button>
             </Grid>
@@ -164,8 +176,10 @@ const Header = () => {
               }}
             >
               <Button
+                href={resumePDF}
+                target="_blank"
+                rel="noreferrer"
                 color="primary"
-                onClick={() => handleClickHome()}
                 variant="outlined"
               >
                 Resume

@@ -81,13 +81,13 @@ const Home = () => {
             </Grid>
             <Grid item sx={{ paddingTop: "5vh", width: "100%" }}>
               <a href="https://github.com/AdamDupuy">
-              <Button
-                color="primary"
-                variant="outlined"
-                sx={{ width: "210px", padding: "10px" }}
-              >
-                Check out my Github!
-              </Button>
+                <Button
+                  color="primary"
+                  variant="outlined"
+                  sx={{ width: "210px", padding: "10px" }}
+                >
+                  Check out my Github!
+                </Button>
               </a>
             </Grid>
           </Grid>
