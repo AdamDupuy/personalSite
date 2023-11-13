@@ -53,7 +53,17 @@ const InfoPage = () => {
 
   useEffect(() => {
     fetchPageInfo();
-  }, []);
+  }, [state.pageType]);
+
+  customTheme.typography.h5 = {
+    fontSize: "1.2rem",
+    "@media (min-width:600px)": {
+      fontSize: "0.7rem",
+    },
+    [customTheme.breakpoints.up("md")]: {
+      fontSize: "1.5rem",
+    },
+  };
 
   return (
     <ThemeProvider theme={customTheme}>

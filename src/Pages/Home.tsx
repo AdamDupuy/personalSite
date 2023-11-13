@@ -19,6 +19,36 @@ const customTheme = createTheme({
   },
 });
 
+customTheme.typography.h2 = {
+  fontSize: "1.5rem",
+  "@media (min-width:600px)": {
+    fontSize: "1.5rem",
+  },
+  [customTheme.breakpoints.up("md")]: {
+    fontSize: "2.4rem",
+  },
+};
+
+customTheme.typography.h3 = {
+  fontSize: "1.3rem",
+  "@media (min-width:600px)": {
+    fontSize: "1.5rem",
+  },
+  [customTheme.breakpoints.up("md")]: {
+    fontSize: "2.4rem",
+  },
+};
+
+customTheme.typography.h6 = {
+  fontSize: "0.8rem",
+  "@media (min-width:600px)": {
+    fontSize: "0.7rem",
+  },
+  [customTheme.breakpoints.up("md")]: {
+    fontSize: "1.2rem",
+  },
+};
+
 const Home = () => {
   return (
     <ThemeProvider theme={customTheme}>
@@ -36,18 +66,20 @@ const Home = () => {
             container
             paddingTop="7vh"
             direction="column"
-            justifyContent="center"
-            width="50%"
+            width="65%"
             height="60%"
+            sx={{ alignItems: { xs: "left", lg: "center" } }}
           >
             <Grid
               container
               direction="column"
               alignItems="left"
-              justifyContent="center"
+              justifyContent="left"
               sx={{
-                width: "100%",
+                width: { xs: "500px", lg: "100%" },
+                height: { xs: "450px" },
                 paddingTop: "50px",
+                paddingRight: { xs: "200px" },
               }}
             >
               <Typography color="primary">Hello, my name is</Typography>
@@ -69,8 +101,12 @@ const Home = () => {
               </Typography>
               <Typography
                 color="secondary.light"
-                paddingTop="20px"
-                width="500px"
+                paddingTop="7vh"
+                sx={{
+                  paddingRight: { xs: "200px" },
+                  width: { xs: "300px", lg: "700px" },
+                }}
+                variant="h6"
               >
                 I'm a software engineer specializing in Java Springboot backend
                 development and React Typescript development. I want to create

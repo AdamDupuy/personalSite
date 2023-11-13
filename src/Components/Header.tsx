@@ -40,6 +40,16 @@ const Header = () => {
     navigate("/projects");
   };
 
+  customTheme.typography.h5 = {
+    fontSize: "0.8rem",
+    "@media (min-width:600px)": {
+      fontSize: "0.5rem",
+    },
+    [customTheme.breakpoints.up("md")]: {
+      fontSize: "1.5rem",
+    },
+  };
+
   return (
     <ThemeProvider theme={customTheme}>
       <Container
@@ -83,10 +93,10 @@ const Header = () => {
                 component="img"
                 justifyContent="center"
                 sx={{
-                  paddingLeft: "4vh",
+                  paddingLeft: { xs: "2vh", lg: "4vh" },
                   paddingTop: "15vh",
-                  height: "100px",
-                  width: "120px",
+                  height: { xs: "55px", lg: "100px" },
+                  width: { xs: "75px", lg: "120px" },
                   backgroundImage: myIcon,
                   alignItems: "left",
                   pointerEvents: "none",
@@ -101,26 +111,27 @@ const Header = () => {
             justifyContent="right"
             direction="row"
             sx={{
-              paddingTop: "5vh",
+              paddingTop: { xs: "4vh", lg: "5vh" },
             }}
           >
             <Grid
               item
               sx={{
-                width: { xs: "200px", lg: "200px" },
+                width: { xs: "80px", lg: "200px" },
                 display: "flex",
                 justifyContent: "space-evenly",
                 alignItems: "right",
+                paddingLeft: { xs: "70px" },
               }}
             >
               <Button onClick={() => handleClickProjects()}>
-                <Typography textTransform="none" color="primary" variant="h6">
+                <Typography textTransform="none" color="primary" variant="h5">
                   •{" "}
                 </Typography>
                 <Typography color="inherit" noWrap>
                   &nbsp;
                 </Typography>
-                <Typography textTransform="none" color="secondary" variant="h6">
+                <Typography textTransform="none" color="secondary" variant="h5">
                   Projects
                 </Typography>
               </Button>
@@ -128,20 +139,21 @@ const Header = () => {
             <Grid
               item
               sx={{
-                width: { xs: "200px", lg: "200px" },
+                width: { xs: "80px", lg: "200px" },
                 display: "flex",
                 justifyContent: "space-evenly",
                 alignItems: "right",
+                paddingLeft: { xs: "55px" },
               }}
             >
               <Button onClick={() => handleClickAboutMe()}>
-                <Typography textTransform="none" color="primary" variant="h6">
+                <Typography textTransform="none" color="primary" variant="h5">
                   •{" "}
                 </Typography>
                 <Typography color="inherit" noWrap>
                   &nbsp;
                 </Typography>
-                <Typography textTransform="none" color="secondary" variant="h6">
+                <Typography textTransform="none" color="secondary" variant="h5">
                   About Me
                 </Typography>
               </Button>
@@ -149,20 +161,21 @@ const Header = () => {
             <Grid
               item
               sx={{
-                width: { xs: "200px", lg: "200px" },
+                width: { xs: "80px", lg: "300px" },
                 display: "flex",
                 justifyContent: "space-evenly",
                 alignItems: "right",
+                paddingLeft: { xs: "50px" },
               }}
             >
               <Button onClick={() => handleClickContact()}>
-                <Typography textTransform="none" color="primary" variant="h6">
+                <Typography textTransform="none" color="primary" variant="h5">
                   •{" "}
                 </Typography>
                 <Typography color="inherit" noWrap>
                   &nbsp;
                 </Typography>
-                <Typography textTransform="none" color="secondary" variant="h6">
+                <Typography textTransform="none" color="secondary" variant="h5">
                   Contact Me
                 </Typography>
               </Button>
@@ -170,10 +183,11 @@ const Header = () => {
             <Grid
               item
               sx={{
-                width: { xs: "200px", lg: "200px" },
+                width: { xs: "100px", lg: "200px" },
                 display: "flex",
                 justifyContent: "space-evenly",
                 alignItems: "right",
+                paddingLeft: { xs: "25px" },
               }}
             >
               <Button
@@ -182,6 +196,8 @@ const Header = () => {
                 rel="noreferrer"
                 color="primary"
                 variant="outlined"
+                size="small"
+                sx={{ textTransform: "none", padding: { xs: "0%" } }}
               >
                 Resume
               </Button>
