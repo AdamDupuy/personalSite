@@ -27,12 +27,14 @@ const Header = () => {
   };
 
   const handleClickAboutMe = async () => {
-    navigate("/infoPage", { state: { pageType: "About Me" } });
+    navigate("/tempAboutMe");
+    //navigate("/infoPage", { state: { pageType: "About Me" } });
     window.location.reload();
   };
 
   const handleClickContact = async () => {
-    navigate("/infoPage", { state: { pageType: "Contact" } });
+    navigate("/tempContact");
+    //navigate("/infoPage", { state: { pageType: "Contact" } });
     window.location.reload();
   };
 
