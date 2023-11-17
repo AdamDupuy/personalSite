@@ -78,18 +78,18 @@ const InfoPage = () => {
             <Header />
           </Grid>
           <Grid item textAlign="center" sx={{ width: "100%" }}>
-            <Box
+            {/**<Box
               component="img"
               justifyContent="center"
               sx={{
                 paddingTop: "5vh",
                 height: "125px",
                 width: "125px",
-                backgroundImage: pageImage,
+                backgroundImage: pageImage, 
                 alignItems: "left",
               }}
-              src={pageImage}
-            />
+               src={pageImage} 
+            /> **/}
           </Grid>
           <Grid item sx={{ width: "100%" }}>
             <Typography
