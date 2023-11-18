@@ -9,6 +9,9 @@ import {
     Box,
   } from "@mui/material";
 import underConstructionImage from "../Assets/underConstruction.jpg";
+import inkParadiseImage from "../Assets/inkParadise.png";
+import kevinsCatalogImage from "../Assets/kevinsCatalog.png";
+import midnightTanksImage from "../Assets/midnightTanks.png";
 
   const customTheme = createTheme({
     palette: {
@@ -25,17 +28,20 @@ import underConstructionImage from "../Assets/underConstruction.jpg";
       projTitle: "Ink Paradise",
       projDescription:
         "A Manga reading site built with React.tsx using api calls from Mangadex.",
-      image: underConstructionImage,
+      image: inkParadiseImage,
+      projLink: "https://github.com/IkaikaL/ink-paradise",
     },
     {
-      projTitle: "Craiglist UI Upgrade",
+      projTitle: "Kevins Catalog",
       projDescription: "A pseudo-Craigslist I worked on in a UI-UX design class.",
-      image: underConstructionImage,
+      image: kevinsCatalogImage,
+      projLink: "https://github.com/IkaikaL/csc-4243-project",
     },
     {
-      projTitle: '3d Tank Game "Midnight Tanks"',
+      projTitle: 'Midnight Tanks',
       projDescription: "A 3d Tank game Built in Unity.",
-      image: underConstructionImage,
+      image: midnightTanksImage,
+      projLink: "https://github.com/RiceFarmerC/MidnightTanks",
     },
   ];  
 
@@ -56,10 +62,10 @@ import underConstructionImage from "../Assets/underConstruction.jpg";
         <Container sx={{ width: "1000px" }}>
               <Grid
                 container
-                direction="row"
+                direction="column"
                 justifyContent="center"
                 alignItems="center"
-                sx={{ width: "100%", height: "800px" }}
+                sx={{ width: "100%", height: "600px" }}
               >
                 {ProjectList.map((project, index) => (
                   <Grid
@@ -71,6 +77,7 @@ import underConstructionImage from "../Assets/underConstruction.jpg";
                       padding: "15px",
                     }}
                   >
+                    <a href={project.projLink}>
                     <Button
                       variant="contained"
                       sx={{
@@ -118,16 +125,16 @@ import underConstructionImage from "../Assets/underConstruction.jpg";
                               xs={4}
                               sx={{ width: "100%", height: "100%" }}
                             >
-                              <img
+                              <img alt="projectImages"
                                 src={project.image}
                                 style={{
                                   boxSizing: "border-box",
                                   overflow: "auto",
                                   position: "static",
-                                  width: "80%",
-                                  height: "80%",
-                                  paddingTop: "10px",
-                                  paddingLeft: "",
+                                  width: "100%",
+                                  height: "100%",
+                                  paddingTop: "7px",
+                                  paddingLeft: "5px",
                                 }}
                               />
                             </Grid>
@@ -135,6 +142,7 @@ import underConstructionImage from "../Assets/underConstruction.jpg";
                         </Grid>
                       </Grid>
                     </Button>
+                    </a>
                   </Grid>
                 ))}
               </Grid>

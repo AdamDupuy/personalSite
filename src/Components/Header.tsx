@@ -8,38 +8,75 @@ import {
   Button,
   Box,
 } from "@mui/material";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import myIcon from "../Assets/icon.png";
 import resumePDF from "../Assets/AdamDupuyJrResume2023.pdf";
 
+
+
 const customTheme = createTheme({
   palette: {
     primary: { main: "#D6CC99" },
-    secondary: { main: "#445D48" },
+    secondary: {
+      main: "#445D48",
+      light: "#FDE5D4",
+    },
   },
 });
 
 const Header = () => {
+  const [aboutMeColor, setAboutMeColor] = useState<string>();
+  const [contactMeColor, setContactMeColor] = useState<string>();
+  const [projectsColor, setProjectsColor] = useState<string>();
   const navigate = useNavigate();
 
-  const handleClickHome = async () => {
+  
+
+  const changePageNameColor = async (num: number) => {
+    (num===1)
+    ? handleClickHome()
+    : (num===2)
+    ? handleClickAboutMe()
+    : (num===3)
+    ? handleClickContact()
+    : (num===4)
+    ? handleClickProjects()
+    : handleClickHome()
+    
+  };
+
+  function handleClickHome() {
     navigate("/");
+    setAboutMeColor("secondary");
+    setContactMeColor("secondary");
+    setProjectsColor("secondary");
+    changePageNameColor(1);
+    
   };
 
-  const handleClickAboutMe = async () => {
-    //navigate("/tempAboutMe");
+  function handleClickAboutMe() {
     navigate("/infoPage", { state: { pageType: "About Me" } });
-    window.location.reload();
+    setAboutMeColor("primary");
+    setContactMeColor("secondary");
+    setProjectsColor("secondary");  
+    changePageNameColor(2);
   };
 
-  const handleClickContact = async () => {
-    //navigate("/tempContact");
+  function handleClickContact() {
     navigate("/infoPage", { state: { pageType: "Contact" } });
-    window.location.reload();
+    setAboutMeColor("secondary");
+    setContactMeColor("primary");
+    setProjectsColor("secondary");
+    changePageNameColor(3);
   };
 
-  const handleClickProjects = async () => {
+  function handleClickProjects() {
     navigate("/projects");
+    setAboutMeColor("secondary");
+    setContactMeColor("secondary");
+    setProjectsColor("primary");
+    changePageNameColor(4);
   };
 
   customTheme.typography.h5 = {
@@ -132,7 +169,7 @@ const Header = () => {
                 <Typography color="inherit" noWrap>
                   &nbsp;
                 </Typography>
-                <Typography textTransform="none" color="secondary" variant="h5">
+                <Typography textTransform="none" color={projectsColor} variant="h5">
                   Projects
                 </Typography>
               </Button>
@@ -154,7 +191,7 @@ const Header = () => {
                 <Typography color="inherit" noWrap>
                   &nbsp;
                 </Typography>
-                <Typography textTransform="none" color="secondary" variant="h5">
+                <Typography textTransform="none" color={aboutMeColor} variant="h5">
                   About Me
                 </Typography>
               </Button>
@@ -176,7 +213,7 @@ const Header = () => {
                 <Typography color="inherit" noWrap>
                   &nbsp;
                 </Typography>
-                <Typography textTransform="none" color="secondary" variant="h5">
+                <Typography textTransform="none" color={contactMeColor} variant="h5">
                   Contact Me
                 </Typography>
               </Button>
