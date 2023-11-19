@@ -60,7 +60,7 @@ const Home = () => {
           alignItems="center"
         >
           <Grid item sx={{ width: "100%" }}>
-            <Header />
+            <Header pType="home" />
           </Grid>
           <Grid
             container

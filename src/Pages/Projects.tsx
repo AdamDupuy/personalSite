@@ -53,18 +53,14 @@ const Projects = () => {
           alignItems="center"
         >
           <Grid item sx={{ width: "100%" }}>
-            <Header />
+            <Header pType="projects" />
           </Grid>
-          <Grid item sx={{ width: "100%" }}>
-            <Typography
-              variant="h3"
-              align="center"
-              paddingTop="5vh"
-              color="primary"
-              textTransform="none"
-            >
-              Projects
-            </Typography>
+          <Grid
+            item
+            paddingTop="5vh"
+            alignItems="center"
+            sx={{ width: "100%" }}
+          >
             <ProjectCard />
           </Grid>
         </Grid>
