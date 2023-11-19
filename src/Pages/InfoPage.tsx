@@ -34,13 +34,15 @@ const InfoPage = () => {
   const fetchAboutMe = async () => {
     setPageType("About Me");
     setBody(
-      "Hello, my name is Adam! I started coding python in 2017 making text based games on an iPad. After highschool, I decided I wanted to code professionally and started at LSU in 2019. The Software Engineering concentration of computer science had lots of project based classes where I gained valuable experience programming with Java, ReactJS, GitHub, TypeScript, CSS, HTML, SQL, and Flutter. In my two internships I learned a lot about Jira, Agile, Confluence, Java SpringBoot, and professional presentations. I graduated from LSU in 2023 and I am working to continue becoming the best dev I can be."
+      "Hello, my name is Adam! I started coding with python in 2017 making text based games, years later I aspire to be the best dev I can be. I'm an agile addict, always excited to work on projects new and old, and always working on improving my skillsets."
     );
   };
 
   const fetchContact = async () => {
     setPageType("Contact");
-    setBody("Email: adupuybusiness@gmail.com");
+    setBody(
+      "My inbox is always open and I am always happy to talk, find me at adupuybusiness@gmail.com."
+    );
   };
 
   const checkPageReload = async () => {
@@ -93,11 +95,15 @@ const InfoPage = () => {
           <Grid item sx={{ width: "100%" }}>
             <Header pType={state.pageType} />
           </Grid>
-          <Grid item alignItems="center" sx={{ width: "1000px" }}>
+          <Grid
+            item
+            alignItems="center"
+            sx={{ width: { xs: "250px", lg: "1000px" } }}
+          >
             <Typography
               variant="h5"
               textAlign="center"
-              paddingTop="10vh"
+              paddingTop="30vh"
               color="secondary"
             >
               {body}

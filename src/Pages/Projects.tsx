@@ -8,7 +8,6 @@ import {
   Button,
 } from "@mui/material";
 import Header from "../Components/Header";
-import underConstructionImage from "../Assets/underConstruction.jpg";
 import ProjectCard from "../Components/ProjectCard";
 
 const customTheme = createTheme({
@@ -20,28 +19,6 @@ const customTheme = createTheme({
     },
   },
 });
-
-const ProjectList = [
-  {
-    projTitle: "Ink Paradise",
-    projDescription:
-      "A Manga reading site built with React.tsx using api calls form Mangadex",
-    image: underConstructionImage,
-  },
-  {
-    projTitle: "Craiglist UI Upgrade",
-    projDescription: "A pseudo-Craigslist i worked on in a UI-UX design class.",
-    image: underConstructionImage,
-  },
-  {
-    projTitle: '3d Tank Game "Midnight Tanks"',
-    projDescription: "A 3d Tank game Built in Unity.",
-    image: underConstructionImage,
-  },
-];
-
-export var projectNum = ProjectList.length;
-
 const Projects = () => {
   return (
     <ThemeProvider theme={customTheme}>
