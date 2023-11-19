@@ -8,134 +8,145 @@ import {
     Button,
     Box,
   } from "@mui/material";
+import underConstructionImage from "../Assets/underConstruction.jpg";
+import inkParadiseImage from "../Assets/inkParadise.png";
+import kevinsCatalogImage from "../Assets/kevinsCatalog.png";
+import midnightTanksImage from "../Assets/midnightTanks.png";
 
   const customTheme = createTheme({
     palette: {
       primary: { main: "#D6CC99" },
-      secondary: { main: "#445D48" },
+      secondary: {
+        main: "#445D48",
+        light: "#FDE5D4",
+      },
     },
   });
   
+  const ProjectList = [
+    {
+      projTitle: "Ink Paradise",
+      projDescription:
+        "A Manga reading site built with React.tsx using api calls from Mangadex.",
+      image: inkParadiseImage,
+      projLink: "https://github.com/IkaikaL/ink-paradise",
+    },
+    {
+      projTitle: "Kevins Catalog",
+      projDescription: "A pseudo-Craigslist I worked on in a UI-UX design class.",
+      image: kevinsCatalogImage,
+      projLink: "https://github.com/IkaikaL/csc-4243-project",
+    },
+    {
+      projTitle: 'Midnight Tanks',
+      projDescription: "A 3d Tank game Built in Unity.",
+      image: midnightTanksImage,
+      projLink: "https://github.com/RiceFarmerC/MidnightTanks",
+    },
+  ];  
+
+  customTheme.typography.h5 = {
+    fontSize: "0.8rem",
+    "@media (min-width:600px)": {
+      fontSize: "0.5rem",
+    },
+    [customTheme.breakpoints.up("md")]: {
+      fontSize: "1.0rem",
+    },
+  };
+
   const ProjectCard = () => {
     
     return (
       <ThemeProvider theme={customTheme}>
-        <Container
-          sx={{
-            height: "10vh",
-            minWidth: "100%",
-          }}
-        >
-          <Grid
-            container
-            direction="column"
-            sx={{
-              color: "white",
-              height: "15vh",
-            }}
-          >
-            <Grid
-              item
-              sx={{
-                width: { xs: "1px", lg: "11px" },
-                display: "flex",
-                justifyContent: "left",
-              }}
-              alignItems="left"
-            >
-
-            </Grid>
-            <Grid
-              container
-              alignItems="right"
-              justifyContent="right"
-              direction="row"
-              sx={{
-                paddingTop: "5vh",
-              }}
-            >
+        <Container sx={{ width: "1000px" }}>
               <Grid
-                item
-                sx={{
-                  width: { xs: "200px", lg: "200px" },
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "right",
-                }}
+                container
+                direction="column"
+                justifyContent="center"
+                alignItems="center"
+                sx={{ width: "100%", height: "600px" }}
               >
-                <Button>
-                  <Typography textTransform="none" color="primary" variant="h6">
-                    •{" "}
-                  </Typography>
-                  <Typography color="inherit" noWrap>
-                    &nbsp;
-                  </Typography>
-                  <Typography textTransform="none" color="secondary" variant="h6">
-                    Projects
-                  </Typography>
-                </Button>
+                {ProjectList.map((project, index) => (
+                  <Grid
+                    item
+                    xs={6}
+                    sx={{
+                      width: "500px",
+                      height: "150px",
+                      padding: "15px",
+                    }}
+                  >
+                    <a href={project.projLink}>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        width: {xs:"70%", lg:"100%"},
+                        height: "100%",
+                        backgroundColor: "secondary.main",
+                        "&:hover": { backgroundColor: "secondary.dark" },
+                      }}
+                    >
+                      <Grid item xs={12} container direction="column">
+                        <Grid item>
+                          <Grid
+                            container
+                            direction="row"
+                            justifyContent="center"
+                            alignItems="center"
+                            sx={{ width: "100%" }}
+                          >
+                            <Grid item xs={7} sx={{ width: "50%" }}>
+                              <Typography
+                                textAlign={"start"}
+                                variant="h5"
+                                fontSize={"15"}
+                                fontWeight={"bold"}
+                                textTransform="none"
+                                sx={{
+                                  margin: "1px",
+                                  width: "100%",
+                                  color: "primary.dark",
+                                }}
+                              >
+                                {project.projTitle}
+                              </Typography>
+                              <Typography
+                                textAlign={"start"}
+                                variant="h5"
+                                textTransform="none"
+                                sx={{ margin: "1px", color: "secondary.light" }}
+                              >
+                                {project.projDescription}
+                              </Typography>
+                            </Grid>
+                            <Grid
+                              item
+                              xs={4}
+                              sx={{ width: "100%", height: "100%" }}
+                            >
+                              <img alt="projectImages"
+                                src={project.image}
+                                style={{
+                                  boxSizing: "border-box",
+                                  overflow: "auto",
+                                  position: "static",
+                                  width: "100%",
+                                  height: "100%",
+                                  paddingTop: "7px",
+                                  paddingLeft: "5px",
+                                }}
+                              />
+                            </Grid>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    </Button>
+                    </a>
+                  </Grid>
+                ))}
               </Grid>
-              <Grid
-                item
-                sx={{
-                  width: { xs: "200px", lg: "200px" },
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "right",
-                }}
-              >
-                <Button>
-                  <Typography textTransform="none" color="primary" variant="h6">
-                    •{" "}
-                  </Typography>
-                  <Typography color="inherit" noWrap>
-                    &nbsp;
-                  </Typography>
-                  <Typography textTransform="none" color="secondary" variant="h6">
-                    About Me
-                  </Typography>
-                </Button>
-              </Grid>
-              <Grid
-                item
-                sx={{
-                  width: { xs: "200px", lg: "200px" },
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "right",
-                }}
-              >
-                <Button >
-                  <Typography textTransform="none" color="primary" variant="h6">
-                    •{" "}
-                  </Typography>
-                  <Typography color="inherit" noWrap>
-                    &nbsp;
-                  </Typography>
-                  <Typography textTransform="none" color="secondary" variant="h6">
-                    Contact
-                  </Typography>
-                </Button>
-              </Grid>
-              <Grid
-                item
-                sx={{
-                  width: { xs: "200px", lg: "200px" },
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "right",
-                }}
-              >
-                <Button
-                  color="primary"
-                  variant="outlined"
-                >
-                  Resume
-                </Button>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Container>
+            </Container>
       </ThemeProvider>
     );
   };
