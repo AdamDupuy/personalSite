@@ -26,40 +26,31 @@ const customTheme = createTheme({
 const InfoPage = () => {
   const { state } = useLocation();
   const [body, setBody] = useState<String>("");
-  const [pageTitle, setPageTitle] = useState<String>("");
-  const [pageType, setPageType] = useState<string>();
-  const [initialPageType, setInitialPageType] = useState<string>();
-  const [placeholder, setPlaceholder] = useState<string>();
-
+  const [pageSelected, setPageSelected] = useState<any>();
+  //yes
   const fetchAboutMe = async () => {
-    setPageType("About Me");
+    console.log(pageSelected);
+    setPageSelected("About Me");
     setBody(
       "Hello, my name is Adam! I started coding with python in 2017 making text based games. Years later, after graduating from LSU, I aspire to be the best dev I can be. I'm an agile addict, always excited to work on projects new and old, and always working on improving my skillsets."
     );
   };
 
   const fetchContact = async () => {
-    setPageType("Contact");
+    setPageSelected("Contact");
     setBody(
       "My inbox is always open and I am always happy to talk, find me at adupuybusiness@gmail.com."
     );
-  };
-
-  const checkPageReload = async () => {
-    initialPageType !== pageType
-      ? window.location.reload()
-      : setPlaceholder("5");
+    console.log("fetchContact");
   };
 
   const fetchPageInfo = async () => {
     state.pageType === "About Me"
       ? (() => {
-          checkPageReload();
           fetchAboutMe();
         })()
       : state.pageType === "Contact"
       ? (() => {
-          checkPageReload();
           fetchContact();
         })()
       : console.log("this thing is broken wow (InfoPage.tsx L.65)");
@@ -70,7 +61,7 @@ const InfoPage = () => {
   }, [state.pageType]);
 
   useEffect(() => {
-    setPageType(state.pageType);
+    setPageSelected(state.pageType);
   }, []);
 
   customTheme.typography.h5 = {

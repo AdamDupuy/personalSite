@@ -28,89 +28,75 @@ interface infoType {
 }
 
 const Header = (props: infoType) => {
-  const [aboutMeColor, setAboutMeColor] = useState<string>();
-  const [contactMeColor, setContactMeColor] = useState<string>();
-  const [projectsColor, setProjectsColor] = useState<string>();
-  const [pagePath, setPagePath] = useState<string>();
-  const [pageType, setPageType] = useState<string>();
-  const [placeholder, setPlaceholder] = useState<string>();
+  const [aboutMeColor, setAboutMeColor] = useState<string>("secondary");
+  const [contactMeColor, setContactMeColor] = useState<string>("secondary");
+  const [projectsColor, setProjectsColor] = useState<string>("secondary");
+  const [pagePath, setPagePath] = useState<any>();
+  const [changeNum, setChangeNum] = useState<number>();
+
   const navigate = useNavigate();
 
-  const fetchPageInfo = async () => {
-    setPagePath(window.location.pathname);
-    pagePath === "/personalSite"
-      ? (() => {
-          setAboutMeColor("secondary");
-          setContactMeColor("secondary");
-          setProjectsColor("secondary");
-        })()
-      : pagePath === "/personalSite/projects"
-      ? (() => {
-          setAboutMeColor("secondary");
-          setContactMeColor("secondary");
-          setProjectsColor("primary");
-        })()
-      : pagePath === "/personalSite/infoPage"
-      ? props.pType === "About Me"
-        ? (() => {
-            setAboutMeColor("primary");
-            setContactMeColor("secondary");
-            setProjectsColor("secondary");
-            setPageType("About Me");
-          })()
-        : props.pType === "Contact"
-        ? (() => {
-            setAboutMeColor("secondary");
-            setContactMeColor("primary");
-            setProjectsColor("secondary");
-            setPageType("Contact");
-          })()
-        : (() => {
-            console.log("useless path 1");
-          })()
-      : (() => {
-          setAboutMeColor("secondary");
-          setContactMeColor("secondary");
-          setProjectsColor("secondary");
-          console.log("useless path 2, path: " + pagePath);
-        })();
+  const assignHomeColor = async () => {
+    setAboutMeColor("secondary");
+    setContactMeColor("secondary");
+    setProjectsColor("secondary");
   };
 
   function handleClickHome() {
+    assignHomeColor();
     navigate("/");
+    assignHomeColor();
   }
+
+  const assignAboutMeColor = async () => {
+    setAboutMeColor("primary");
+    setContactMeColor("secondary");
+    setProjectsColor("secondary");
+  };
 
   function handleClickAboutMe() {
-    pagePath === "/personalSite/infoPage"
-      ? pageType === "About Me"
-        ? setPlaceholder("6")
-        : (() => {
-            setPageType("About Me");
-            navigate("/infoPage", { state: { pageType: "About Me" } });
-          })()
-      : (() => {
-          setPageType("About Me");
-          navigate("/infoPage", { state: { pageType: "About Me" } });
-        })();
+    assignAboutMeColor();
+    navigate("/infoPage", { state: { pageType: "About Me" } });
+    assignAboutMeColor();
   }
+
+  const assignContactColor = async () => {
+    setAboutMeColor("secondary");
+    setContactMeColor("primary");
+    setProjectsColor("secondary");
+  };
 
   function handleClickContact() {
-    pagePath === "/personalSite/infoPage"
-      ? pageType === "Contact"
-        ? setPlaceholder("7")
-        : (() => {
-            setPageType("Contact");
-            navigate("/infoPage", { state: { pageType: "Contact" } });
-          })()
-      : (() => {
-          setPageType("Contact");
-          navigate("/infoPage", { state: { pageType: "Contact" } });
-        })();
+    assignContactColor();
+    navigate("/infoPage", { state: { pageType: "Contact" } });
+    assignContactColor();
   }
 
+  const assignProjectColor = async () => {
+    setAboutMeColor("secondary");
+    setContactMeColor("secondary");
+    setProjectsColor("primary");
+  };
+
   function handleClickProjects() {
+    assignProjectColor();
     navigate("/projects");
+    assignProjectColor();
   }
+
+  const colorAssign = async () => {
+    window.location.pathname === "/personalSite"
+      ? assignHomeColor()
+      : window.location.pathname === "/personalSite/projects"
+      ? assignProjectColor()
+      : window.location.pathname === "/personalSite/infoPage"
+      ? props.pType === "About Me"
+        ? assignAboutMeColor()
+        : props.pType === "Contact"
+        ? assignContactColor()
+        : console.log("useless path 1")
+      : console.log(window.location.pathname);
+  };
 
   customTheme.typography.h5 = {
     fontSize: "0.8rem",
@@ -123,14 +109,8 @@ const Header = (props: infoType) => {
   };
 
   useEffect(() => {
-    fetchPageInfo();
-  }, [aboutMeColor]);
-
-  useEffect(() => {
-    setPageType(props.pType);
-  }, []);
-
-  useEffect(() => {}, []);
+    colorAssign();
+  }, [window.location.pathname]);
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -158,7 +138,9 @@ const Header = (props: infoType) => {
             alignItems="left"
           >
             <Button
-              onClick={() => handleClickHome()}
+              onClick={() => {
+                handleClickHome();
+              }}
               disableElevation
               disableRipple
               disableTouchRipple
