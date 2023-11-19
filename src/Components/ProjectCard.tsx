@@ -31,14 +31,16 @@ const ProjectList = [
     projLink: "https://github.com/IkaikaL/ink-paradise",
   },
   {
-    projTitle: "Kevins Catalog",
-    projDescription: "A pseudo-Craigslist I worked on in a UI-UX design class.",
+    projTitle: "Kevin's Catalog",
+    projDescription:
+      "A study on UI-UX design with Craigslist as our base website.",
     image: kevinsCatalogImage,
     projLink: "https://github.com/IkaikaL/csc-4243-project",
   },
   {
     projTitle: "Midnight Tanks",
-    projDescription: "A 3d Tank game Built in Unity.",
+    projDescription:
+      "A 3D tank game built in Unity for a game development class.",
     image: midnightTanksImage,
     projLink: "https://github.com/RiceFarmerC/MidnightTanks",
   },

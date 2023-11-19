@@ -34,7 +34,7 @@ const InfoPage = () => {
   const fetchAboutMe = async () => {
     setPageType("About Me");
     setBody(
-      "Hello, my name is Adam! I started coding with python in 2017 making text based games, years later I aspire to be the best dev I can be. I'm an agile addict, always excited to work on projects new and old, and always working on improving my skillsets."
+      "Hello, my name is Adam! I started coding with python in 2017 making text based games. Years later, after graduating from LSU, I aspire to be the best dev I can be. I'm an agile addict, always excited to work on projects new and old, and always working on improving my skillsets."
     );
   };
 

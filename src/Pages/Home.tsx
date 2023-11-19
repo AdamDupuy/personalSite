@@ -108,7 +108,7 @@ const Home = () => {
                 }}
                 variant="h6"
               >
-                I'm a software engineer specializing in Java Springboot backend
+                I'm a software engineer specializing in Java Springboot
                 development and React Typescript development. I want to create
                 things that make the internet a more enjoyable and better place.
                 Currently, I am applying to jobs and learning more about
