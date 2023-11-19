@@ -187,7 +187,16 @@ const Header = (props: infoType) => {
                 paddingLeft: { xs: "70px" },
               }}
             >
-              <Button onClick={() => handleClickProjects()}>
+              <Button
+                onClick={() => handleClickProjects()}
+                disableRipple
+                disableTouchRipple
+                sx={{
+                  "&:hover": {
+                    background: "none",
+                  },
+                }}
+              >
                 <Typography
                   textTransform="none"
                   color="secondary.light"
@@ -221,6 +230,13 @@ const Header = (props: infoType) => {
                 onClick={() => {
                   handleClickAboutMe();
                 }}
+                disableRipple
+                disableTouchRipple
+                sx={{
+                  "&:hover": {
+                    background: "none",
+                  },
+                }}
               >
                 <Typography
                   textTransform="none"
@@ -251,7 +267,16 @@ const Header = (props: infoType) => {
                 paddingLeft: { xs: "50px" },
               }}
             >
-              <Button onClick={() => handleClickContact()}>
+              <Button
+                onClick={() => handleClickContact()}
+                disableRipple
+                disableTouchRipple
+                sx={{
+                  "&:hover": {
+                    background: "none",
+                  },
+                }}
+              >
                 <Typography
                   textTransform="none"
                   color="secondary.light"
@@ -290,7 +315,7 @@ const Header = (props: infoType) => {
                 size="small"
                 sx={{ textTransform: "none", padding: { xs: "0%" } }}
               >
-                Resume
+                Resumé
               </Button>
             </Grid>
           </Grid>

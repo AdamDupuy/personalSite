@@ -8,7 +8,7 @@ import {
   Button,
 } from "@mui/material";
 import Header from "../Components/Header";
-import ProjectCard from "../Components/ProjectCard";
+import ProjectView from "../Components/ProjectView";
 
 const customTheme = createTheme({
   palette: {
@@ -36,9 +36,9 @@ const Projects = () => {
             item
             paddingTop="5vh"
             alignItems="center"
-            sx={{ width: "100%" }}
+            sx={{ paddingLeft: { lg: "76px" }, width: "100%" }}
           >
-            <ProjectCard />
+            <ProjectView />
           </Grid>
         </Grid>
       </Container>

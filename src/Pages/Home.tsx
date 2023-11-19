@@ -102,6 +102,7 @@ const Home = () => {
               <Typography
                 color="secondary.light"
                 paddingTop="7vh"
+                fontStyle={"italic"}
                 sx={{
                   paddingRight: { xs: "200px" },
                   width: { xs: "300px", lg: "700px" },
