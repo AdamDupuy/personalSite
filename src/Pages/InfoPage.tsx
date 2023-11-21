@@ -38,9 +38,7 @@ const InfoPage = () => {
 
   const fetchContact = async () => {
     setPageSelected("Contact");
-    setBody(
-      "My inbox is always open and I am always happy to talk, find me at adupuybusiness@gmail.com."
-    );
+    setBody("My inbox is always open and I am always happy to talk!");
     console.log("fetchContact");
   };
 
@@ -54,6 +52,32 @@ const InfoPage = () => {
           fetchContact();
         })()
       : console.log("this thing is broken wow (InfoPage.tsx L.65)");
+  };
+
+  const renderEmailMeButton = () => {
+    if (state.pageType === "Contact") {
+      return (
+        <Button
+          color="primary"
+          variant="outlined"
+          size="large"
+          sx={{
+            height: "50px",
+            width: "100px",
+            textTransform: "none",
+            padding: { xs: "0%" },
+            paddingTop: "50px",
+          }}
+          onClick={() =>
+            (window.location.href = "mailto:adupuybusiness@gmail.com")
+          }
+        >
+          Email Me
+        </Button>
+      );
+    } else {
+      console.log("");
+    }
   };
 
   useEffect(() => {
@@ -79,7 +103,7 @@ const InfoPage = () => {
       <Container disableGutters sx={{ minWidth: "100%", minHeight: "100vh" }}>
         <Grid
           container
-          direction="row"
+          direction="column"
           justifyContent="center"
           alignItems="center"
         >
@@ -95,10 +119,19 @@ const InfoPage = () => {
               variant="h5"
               textAlign="center"
               paddingTop="30vh"
+              paddingBottom="50px"
               color="secondary"
             >
               {body}
             </Typography>
+          </Grid>
+          <Grid
+            item
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+          >
+            {renderEmailMeButton()}
           </Grid>
         </Grid>
       </Container>

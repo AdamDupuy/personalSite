@@ -310,7 +310,11 @@ const Header = (props: infoType) => {
                 color="primary"
                 variant="outlined"
                 size="small"
-                sx={{ textTransform: "none", padding: { xs: "0%" } }}
+                sx={{
+                  textTransform: "none",
+                  padding: { xs: "0%" },
+                  paddingY: "0px",
+                }}
               >
                 Resumé
               </Button>
