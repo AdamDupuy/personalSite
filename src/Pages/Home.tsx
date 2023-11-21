@@ -11,10 +11,10 @@ import Header from "../Components/Header";
 
 const customTheme = createTheme({
   palette: {
-    primary: { main: "#D6CC99" },
+    primary: { main: "#0077C0" },
     secondary: {
-      main: "#445D48",
-      light: "#FDE5D4",
+      main: "#FAFAFA",
+      light: "#C7EEFF",
     },
   },
 });

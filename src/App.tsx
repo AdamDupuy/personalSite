@@ -10,7 +10,7 @@ function App() {
     <Container
       disableGutters
       sx={{
-        backgroundColor: "#001524",
+        backgroundColor: "#1D242B",
         minWidth: "100%",
         minHeight: "100vh",
         overflow: "auto",

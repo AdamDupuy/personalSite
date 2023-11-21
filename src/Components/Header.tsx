@@ -12,13 +12,14 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import myIcon from "../Assets/icon.png";
 import resumePDF from "../Assets/AdamDupuyJrResume2023.pdf";
+import HomeIcon from "@mui/icons-material/Home";
 
 const customTheme = createTheme({
   palette: {
-    primary: { main: "#D6CC99" },
+    primary: { main: "#0077C0" },
     secondary: {
-      main: "#445D48",
-      light: "#FDE5D4",
+      main: "#FAFAFA",
+      light: "#C7EEFF",
     },
   },
 });
@@ -153,18 +154,14 @@ const Header = (props: infoType) => {
                 },
               }}
             >
-              <Box
-                component="img"
-                justifyContent="center"
+              <HomeIcon
                 sx={{
-                  paddingLeft: { xs: "2vh", lg: "4vh" },
-                  paddingTop: "15vh",
-                  height: { xs: "55px", lg: "100px" },
-                  width: { xs: "75px", lg: "120px" },
-                  backgroundImage: myIcon,
-                  alignItems: "left",
+                  paddingTop: { xs: "15vh", lg: "15vh" },
+                  paddingLeft: { xs: "0vh", lg: "5vh" },
+                  color: "secondary",
+                  width: "50px",
+                  height: "50px",
                 }}
-                src={myIcon}
               />
             </Button>
           </Grid>
