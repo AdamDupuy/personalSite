@@ -76,7 +76,6 @@ const InfoPage = () => {
         </Button>
       );
     } else {
-      console.log("");
     }
   };
 
