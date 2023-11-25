@@ -100,12 +100,12 @@ const Header = (props: infoType) => {
   };
 
   customTheme.typography.h5 = {
-    fontSize: "0.8rem",
+    fontSize: "0.4rem",
     "@media (min-width:600px)": {
-      fontSize: "0.5rem",
+      fontSize: "0.2rem",
     },
     [customTheme.breakpoints.up("md")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.0rem",
     },
   };
 
@@ -159,8 +159,8 @@ const Header = (props: infoType) => {
                   paddingTop: { xs: "15vh", lg: "15vh" },
                   paddingLeft: { xs: "0vh", lg: "5vh" },
                   color: "secondary",
-                  width: "50px",
-                  height: "50px",
+                  width: { xs: "30px", lg: "50px" },
+                  height: { xs: "30px", lg: "50px" },
                 }}
               />
             </Button>
@@ -301,6 +301,7 @@ const Header = (props: infoType) => {
                 justifyContent: "space-evenly",
                 alignItems: "right",
                 paddingLeft: { xs: "25px" },
+                paddingTop: {xs: "1vh"},
               }}
             >
               <Button
@@ -313,7 +314,9 @@ const Header = (props: infoType) => {
                 sx={{
                   textTransform: "none",
                   padding: { xs: "0%" },
-                  paddingY: "0px",
+                  paddingTop: "0px",
+                  width: { xs: "20px", lg: "50px" },
+                  height: { xs: "20px", lg: "50px" },                  
                 }}
               >
                 Resumé

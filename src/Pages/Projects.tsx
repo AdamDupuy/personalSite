@@ -25,18 +25,18 @@ const Projects = () => {
       <Container disableGutters sx={{ minWidth: "100%", minHeight: "100vh" }}>
         <Grid
           container
-          direction="row"
+          direction="column"
           justifyContent="center"
           alignItems="center"
         >
-          <Grid item sx={{ width: "100%" }}>
+          <Grid item sx={{ width: {xs: "100%",lg:"100%"} }}>
             <Header pType="projects" />
           </Grid>
           <Grid
             item
             paddingTop="5vh"
             alignItems="center"
-            sx={{ paddingLeft: { lg: "76px" }, width: "100%" }}
+            sx={{ paddingLeft: { lg: "76px" }, width:{xs: "95%",lg:"100%"}}}
           >
             <ProjectView />
           </Grid>

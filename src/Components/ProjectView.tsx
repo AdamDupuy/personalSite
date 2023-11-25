@@ -47,7 +47,7 @@ const ProjectList = [
 ];
 
 customTheme.typography.h5 = {
-  fontSize: "0.8rem",
+  fontSize: "0.6rem",
   "@media (min-width:500px)": {
     fontSize: "0.5rem",
   },
@@ -57,7 +57,7 @@ customTheme.typography.h5 = {
 };
 
 customTheme.typography.h4 = {
-  fontSize: "0.4rem",
+  fontSize: "0.8rem",
   "@media (min-width:500px)": {
     fontSize: "0.5rem",
   },
@@ -72,7 +72,7 @@ const ProjectView = () => {
       <Container
         sx={{
           overflow: "auto",
-          width: { xs: "515px", sm: "650px", md: "750px", lg: "1500px" },
+          width: { xs: "475px", sm: "650px", md: "750px", lg: "1500px" },
           height: { xs: "700px", sm: "650px", md: "750px", lg: "1100px" },
           paddingTop: { xs: "5vh" },
         }}

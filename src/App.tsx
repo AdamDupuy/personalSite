@@ -11,7 +11,7 @@ function App() {
       disableGutters
       sx={{
         backgroundColor: "#1D242B",
-        minWidth: "100%",
+        width: {xs:"100%",lg:"100%"},
         minHeight: "100vh",
         overflow: "auto",
       }}
