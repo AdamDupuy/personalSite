@@ -100,7 +100,7 @@ const Header = (props: infoType) => {
   };
 
   customTheme.typography.h5 = {
-    fontSize: "0.4rem",
+    fontSize: "0.5rem",
     "@media (min-width:600px)": {
       fontSize: "0.3rem",
     },
@@ -304,7 +304,7 @@ const Header = (props: infoType) => {
                     },
                   }}
                 >
-                  Contact Me
+                  Contact
                 </Typography>
               </Button>
             </Grid>

@@ -71,9 +71,9 @@ customTheme.typography.h5 = {
 };
 
 customTheme.typography.h4 = {
-  fontSize: "0.4rem",
+  fontSize: "0.8rem",
   "@media (min-width:500px)": {
-    fontSize: "0.5rem",
+    fontSize: "0.4rem",
   },
   [customTheme.breakpoints.up("md")]: {
     fontSize: "2.5rem",
@@ -98,7 +98,7 @@ const ProjectView = () => {
           alignItems="center"
           spacing={12}
           sx={{
-            width: "100%",
+            width: { xs: "85%", lg: "100%" },
             height: "700px",
             "--Grid-borderWidth": "1px",
             "& > div": {

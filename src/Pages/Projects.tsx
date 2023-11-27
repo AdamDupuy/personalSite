@@ -36,7 +36,7 @@ const Projects = () => {
             item
             paddingTop="5vh"
             alignItems="center"
-            sx={{ paddingLeft: { lg: "76px" }, width: "100%" }}
+            sx={{ paddingLeft: { xs: "25px", lg: "76px" }, width: "100%" }}
           >
             <ProjectView />
           </Grid>
