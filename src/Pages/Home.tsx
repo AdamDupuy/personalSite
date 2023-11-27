@@ -116,12 +116,15 @@ const Home = () => {
                 programming in my free time.
               </Typography>
             </Grid>
-            <Grid item sx={{ paddingTop: "5vh", width: "100%" }}>
+            <Grid
+              item
+              sx={{ paddingTop: { xs: "1vh", lg: "5vh" }, width: "100%" }}
+            >
               <a href="https://github.com/AdamDupuy">
                 <Button
                   color="primary"
                   variant="outlined"
-                  sx={{ width: "210px", padding: "10px" }}
+                  sx={{ width: "210px", padding: { xs: "2px", lg: "10px" } }}
                 >
                   Check out my Github!
                 </Button>

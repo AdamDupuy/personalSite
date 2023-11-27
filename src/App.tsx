@@ -13,7 +13,7 @@ function App() {
         backgroundColor: "#1D242B",
         minWidth: "100%",
         minHeight: "100vh",
-        overflow: "auto",
+        overflow: "hidden",
       }}
     >
       <BrowserRouter basename="personalSite">

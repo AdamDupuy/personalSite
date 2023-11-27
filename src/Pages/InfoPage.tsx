@@ -117,9 +117,9 @@ const InfoPage = () => {
             <Typography
               variant="h5"
               textAlign="center"
-              paddingTop="30vh"
               paddingBottom="50px"
               color="secondary"
+              sx={{ paddingTop: { xs: "15vh", lg: "30vh" } }}
             >
               {body}
             </Typography>

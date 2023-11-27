@@ -100,12 +100,12 @@ const Header = (props: infoType) => {
   };
 
   customTheme.typography.h5 = {
-    fontSize: "0.8rem",
+    fontSize: "0.4rem",
     "@media (min-width:600px)": {
-      fontSize: "0.5rem",
+      fontSize: "0.3rem",
     },
     [customTheme.breakpoints.up("md")]: {
-      fontSize: "1.5rem",
+      fontSize: "1.2rem",
     },
   };
 
@@ -156,11 +156,11 @@ const Header = (props: infoType) => {
             >
               <HomeIcon
                 sx={{
-                  paddingTop: { xs: "15vh", lg: "15vh" },
+                  paddingTop: { xs: "13vh", lg: "15vh" },
                   paddingLeft: { xs: "0vh", lg: "5vh" },
                   color: "secondary",
-                  width: "50px",
-                  height: "50px",
+                  width: { xs: "25px", lg: "50px" },
+                  height: { xs: "25px", lg: "50px" },
                 }}
               />
             </Button>
@@ -208,6 +208,11 @@ const Header = (props: infoType) => {
                   textTransform="none"
                   color={projectsColor}
                   variant="h5"
+                  sx={{
+                    "&:hover": {
+                      color: "primary.light",
+                    },
+                  }}
                 >
                   Projects
                 </Typography>
@@ -249,6 +254,11 @@ const Header = (props: infoType) => {
                   textTransform="none"
                   color={aboutMeColor}
                   variant="h5"
+                  sx={{
+                    "&:hover": {
+                      color: "primary.light",
+                    },
+                  }}
                 >
                   About Me
                 </Typography>
@@ -288,6 +298,11 @@ const Header = (props: infoType) => {
                   textTransform="none"
                   color={contactMeColor}
                   variant="h5"
+                  sx={{
+                    "&:hover": {
+                      color: "primary.light",
+                    },
+                  }}
                 >
                   Contact Me
                 </Typography>
@@ -301,6 +316,8 @@ const Header = (props: infoType) => {
                 justifyContent: "space-evenly",
                 alignItems: "right",
                 paddingLeft: { xs: "25px" },
+                paddingTop: { xs: "8px" },
+                paddingBottom: { lg: "10px" },
               }}
             >
               <Button
@@ -311,6 +328,8 @@ const Header = (props: infoType) => {
                 variant="outlined"
                 size="small"
                 sx={{
+                  width: { xs: "10px", lg: "75px" },
+                  height: { xs: "20px", lg: "40px" },
                   textTransform: "none",
                   padding: { xs: "0%" },
                   paddingY: "0px",

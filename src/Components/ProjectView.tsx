@@ -13,6 +13,20 @@ import kevinsCatalogImage from "../Assets/kevinsCatalog.png";
 import midnightTanksImage from "../Assets/midnightTanks.png";
 
 const customTheme = createTheme({
+  typography: {
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+  },
   palette: {
     primary: { main: "#0077C0" },
     secondary: {
@@ -119,6 +133,9 @@ const ProjectView = () => {
                           margin: "0px",
                           width: "100%",
                           color: "primary.main",
+                          "&:hover": {
+                            color: "primary.light",
+                          },
                         }}
                       >
                         {project.projTitle}
