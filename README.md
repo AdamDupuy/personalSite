@@ -5,7 +5,7 @@ Tech Stack:
 - JIRA (documentation)
 - Create React App (initial creation of page)
 - MUI library (library used for page structure and content)
-- Css (styling)
+- CSS (styling)
 - Github pages (deployment)
 - This repository (version control)
 
