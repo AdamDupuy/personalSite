@@ -11,7 +11,7 @@ import {
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import myIcon from "../Assets/icon.png";
-import resumePDF from "../Assets/AdamDupuyJrResume2023.pdf";
+import resumePDF from "../Assets/Adam Dupuy Resume 2024.pdf";
 import HomeIcon from "@mui/icons-material/Home";
 
 const customTheme = createTheme({

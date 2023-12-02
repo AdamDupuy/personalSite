@@ -11,6 +11,7 @@ import {
 import inkParadiseImage from "../Assets/inkParadise.png";
 import kevinsCatalogImage from "../Assets/kevinsCatalog.png";
 import midnightTanksImage from "../Assets/midnightTanks.png";
+import recursiveImage from "../Assets/personalSite.png";
 
 const customTheme = createTheme({
   typography: {
@@ -57,6 +58,13 @@ const ProjectList = [
       "A 3D tank game built in Unity for a game development class.",
     image: midnightTanksImage,
     projLink: "https://github.com/RiceFarmerC/MidnightTanks",
+  },
+  {
+    projTitle: "This Site",
+    projDescription:
+      "I built this site to showcase what I've accomplished so far, refer to the ReadMe for info on the development process.",
+    image: recursiveImage,
+    projLink: "https://github.com/AdamDupuy/personalSite",
   },
 ];
 
